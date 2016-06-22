@@ -10,12 +10,15 @@ Just copy the _toolbox.scss file into your Sass directory.
 ### Classnames
 I try to keep classnames and prefixes as short as possible, keeping them easy to read and understand at the same time. Take a look at the file to learn these classnames. A short example:
 
-| Prefix / classname  | Stands for... |
-| ------------- | ------------- |
+| Prefix / classname  | Stands for... | Bootstrap example |
+| ------------- | ------------- | ------------- |
 | .t-...  | toolbox |
-| .t-p  | padding |
-| .t-ptb  | padding top bottom |
-| .t-mb  | margin bottom |
+| .t-p-...  | padding | .t-p-md-20
+| .t-ptb-...  | padding top bottom | .t-ptb-sm-30
+| .t-mb-...  | margin bottom | .t-mb-xs-50
+
+| Prefix / classname  | Stands for... |
+| ------------- | ------------- | ------------- |
 | .t-t-...  | text |
 | .t-t-center  | text center |
 | .t-b-...  | block |
