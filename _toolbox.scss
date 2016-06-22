@@ -142,7 +142,7 @@
 @media (min-width: 1200px) {
 
     @for $i from 0 through 20 {
-        .t-m-lg-#{$i * 10} {
+        .t-mb-lg-#{$i * 10} {
             margin-bottom: #{$i * 10}px;
         }
     }
