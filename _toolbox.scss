@@ -355,7 +355,7 @@ h1 {
 //TODO BETA
 //for Bootstrap .row to create equal height columns with flexbox
 .-eq-height {
-    @media (min-width: $screen-sm-min) {
+    @media (min-width: 768px) {
         display: flex;
 
         //TODO needs some better implementaton
