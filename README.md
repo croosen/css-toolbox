@@ -1,4 +1,7 @@
 # CSS Toolbox
+
+**update** take the nagiri branch for the em-based toolbox (not Bootstrap based). It's more flexible, and more inline with new standards. I use it in combination with Susy.
+
 CSS Toolbox contains Bootstrap-based, ready to use classes to speed up front-end development. Where Bootstrap is made to develop horizontal grids, CSS Toolbox takes care of the vertical grid, paddings and margins. In addition I have filled CSS Toolbox with some helpful text-, block- and font-helper classes.
 
 ### Dependencies
