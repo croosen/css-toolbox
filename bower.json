@@ -1,0 +1,9 @@
+{
+  "name": "css-toolbox",
+  "description": "Ready to use classes to speed up front-end development",
+  "main": "css-toolbox",
+  "license": "BSD",
+  "ignore": [
+    "README.md"
+  ]
+}
