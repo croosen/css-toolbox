@@ -1,7 +1,6 @@
 /*----------------------------------------------------*/
 // Toolbox.
 // This has all the classes you need to quickly create styled elements
-// Mediaqueries are based on Bootstrap defaults
 // Usage: <element class="t-p-30 t-mb-xs-20 ...etc. "></element>
 /*----------------------------------------------------*/
 
@@ -9,89 +8,76 @@
 // Paddings.
 /*----------------------------------------------------*/
 
-//general paddings, not breakpoint related
-//padding top right bottom left
-@for $i from 0 through 20 {
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+// all
+@for $i from 0 through 10 {
     .t-p-#{$i * 10} {
-        padding: #{$i * 10}px;
+        padding: em($i * 10);
     }
 }
 
-//padding top bottom
-@for $i from 0 through 20 {
+// top bottom
+@for $i from 0 through 10 {
     .t-ptb-#{$i * 10} {
-        padding: #{$i * 10}px 0;
+        padding: em($i * 10) 0;
     }
 }
 
-//padding < xs
-@media (max-width: 767px) {
+// >= 768
+@media (min-width: em(768)) {
 
-    //padding top right bottom left
-    @for $i from 0 through 20 {
-        .t-p-xs-#{$i * 10} {
-            padding: #{$i * 10}px;
-        }
-    }
-
-    //padding top bottom
-    @for $i from 0 through 20 {
-        .t-ptb-xs-#{$i * 10} {
-            padding: #{$i * 10}px 0;
-        }
-    }
-}
-
-//padding > sm
-@media (min-width: 768px) {
-
-    //padding top right bottom left
-    @for $i from 0 through 20 {
+    // all
+    @for $i from 0 through 10 {
         .t-p-sm-#{$i * 10} {
-            padding: #{$i * 10}px;
+            padding: em($i * 10);
         }
     }
 
-    //padding top bottom
-    @for $i from 0 through 20 {
+    // top bottom
+    @for $i from 0 through 10 {
         .t-ptb-sm-#{$i * 10} {
-            padding: #{$i * 10}px 0;
+            padding: em($i * 10) 0;
         }
     }
 }
 
-//padding > md
-@media (min-width: 992px) {
+// >= 1024
+@media (min-width: em(1024)) {
 
-    //padding top right bottom left
-    @for $i from 0 through 20 {
+    // all
+    @for $i from 0 through 10 {
         .t-p-md-#{$i * 10} {
-            padding: #{$i * 10}px;
+            padding: em($i * 10);
         }
     }
 
-    //padding top bottom
-    @for $i from 0 through 20 {
+    // top bottom
+    @for $i from 0 through 10 {
         .t-ptb-md-#{$i * 10} {
-            padding: #{$i * 10}px 0;
+            padding: em($i * 10) 0;
         }
     }
 }
 
-//padding > lg
-@media (min-width: 1200px) {
+// >= 1200
+@media (min-width: em(75)) {
 
-    //padding top right bottom left
-    @for $i from 0 through 20 {
+    // all
+    @for $i from 0 through 10 {
         .t-p-lg-#{$i * 10} {
-            padding: #{$i * 10}px;
+            padding: em($i * 10);
         }
     }
 
-    //padding top bottom
-    @for $i from 0 through 20 {
+    // top bottom
+    @for $i from 0 through 10 {
         .t-ptb-lg-#{$i * 10} {
-            padding: #{$i * 10}px 0;
+            padding: em($i * 10) 0;
         }
     }
 }
@@ -100,50 +86,42 @@
 // Margins.
 /*----------------------------------------------------*/
 
-//general margins, not breakpoint related
-//margin bottom
+// bottom
 @for $i from 0 through 20 {
     .t-mb-#{$i * 10} {
-        margin-bottom: #{$i * 10}px;
+        margin-bottom: em($i * 10);
     }
 }
 
-//margin < xs
-@media (max-width: 767px) {
+// >= 768
+@media (min-width: em(768)) {
 
-    @for $i from 0 through 20 {
-        .t-mb-xs-#{$i * 10} {
-            margin-bottom: #{$i * 10}px;
-        }
-    }
-}
-
-//margin > sm
-@media (min-width: 768px) {
-
-    @for $i from 0 through 20 {
+    // bottom
+    @for $i from 0 through 10 {
         .t-mb-sm-#{$i * 10} {
-            margin-bottom: #{$i * 10}px;
+            margin-bottom: em($i * 10);
         }
     }
 }
 
-//margin > md
-@media (min-width: 992px) {
+// >= 1024
+@media (min-width: em(1024)) {
 
-    @for $i from 0 through 20 {
+    // bottom
+    @for $i from 0 through 10 {
         .t-mb-md-#{$i * 10} {
-            margin-bottom: #{$i * 10}px;
+            margin-bottom: em($i * 10);
         }
     }
 }
 
-//margin > lg
-@media (min-width: 1200px) {
+// >= 1200
+@media (min-width: em(1200)) {
 
-    @for $i from 0 through 20 {
+    // bottom
+    @for $i from 0 through 10 {
         .t-mb-lg-#{$i * 10} {
-            margin-bottom: #{$i * 10}px;
+            margin-bottom: em($i * 10);
         }
     }
 }
@@ -151,7 +129,7 @@
 /*----------------------------------------------------*/
 // Resets.
 /*----------------------------------------------------*/
-.t-m-0 {
+.t-mt-0 {
     margin-top: 0;
 }
 
@@ -195,10 +173,6 @@
 /*----------------------------------------------------*/
 .t-b-b {
     display: block;
-
-    &.-full {
-        width: 100%;
-    }
 }
 
 .t-b-ib {
@@ -211,40 +185,6 @@
 
 .t-b-center {
     margin: 0 auto;
-}
-
-//vertical aligned elements
-.t-b-vert {
-    transform-style: preserve-3d;
-
-    .t-i-vert {
-        display: block;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    //disable xs
-    &.-dv-xs {
-        @media (max-width: 767px) {
-            .t-i-vert {
-                top: auto;
-                transform: none;
-                position: relative;
-            }
-        }
-    }
-
-    //disable sm
-    &.-dv-sm {
-        @media (min-width: 768px) and (max-width: 991px) {
-            .t-i-vert {
-                top: auto;
-                transform: none;
-                position: relative;
-            }
-        }
-    }
 }
 
 .t-overflow-hidden {
@@ -270,7 +210,7 @@
     position: absolute;
 }
 
-.no-list {
+.list-reset {
     list-style: none;
     padding: 0;
     margin-top: 0;
@@ -284,11 +224,11 @@
 //calculate rem
 //use @include font(18px,30px) to set font-size and line-height in rem with px fallback
 @function calculateRem($size) {
-    $remSize: $size / 18px;
+    $remSize: $size / 16px;
     @return $remSize * 1rem;
 }
 
-@mixin font($size: 18px, $lineheight: 30px) {
+@mixin font($size: 16px, $lineheight: 30px) {
     font-size: $size;
     font-size: calculateRem($size);
     line-height: $lineheight;
@@ -328,7 +268,7 @@
 .t-img-responsive {
     max-width: 100%;
 
-    &.-full {
+    &.-wide {
         width: 100%;
     }
 }
@@ -337,34 +277,9 @@
 // Resets and basic settings.
 /*----------------------------------------------------*/
 
-//additions to reset.css
-* {
-    box-sizing: border-box;
-    outline: none !important;
-}
-
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-    margin-top: 0;
-}
-
-//TODO BETA
-//for Bootstrap .row to create equal height columns with flexbox
-.-eq-height {
-    @media (min-width: $screen-sm-min) {
-        display: flex;
-
-        //TODO needs some better implementaton
-        //placed on the child, this stretches contentdiv along with parent height
-        .-s-i {
-            align-self: stretch;
-            width: 100%;
-        }
-    }
 }
 
 //button reset
@@ -374,4 +289,48 @@ h1 {
     padding: 0;
     cursor: pointer;
     background: none;
+}
+
+/*----------------------------------------------------*/
+// Flexbox.
+/*----------------------------------------------------*/
+
+.flex {
+    display: flex;
+}
+
+.flex-vert {
+    align-items: center;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-right {
+    justify-content: flex-end;
+}
+
+.flex-stretch {
+    align-items: stretch;
+}
+
+// Modernizr fallback
+.no-flexbox {
+
+    .flex {
+        display: table;
+    }
+
+    .flex-item {
+        display: table-cell;
+    }
+
+    .flex-center {
+        text-align: center;
+    }
+
+    .flex-right {
+        text-align: right;
+    }
 }
