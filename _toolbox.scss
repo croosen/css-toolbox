@@ -65,7 +65,7 @@ $browser-context: 16; // Default
 }
 
 // >= 1200
-@media (min-width: em(75)) {
+@media (min-width: em(1200)) {
 
     // all
     @for $i from 0 through 10 {
