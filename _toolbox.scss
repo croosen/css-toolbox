@@ -46,8 +46,8 @@ $browser-context: 16; // Default
     }
 }
 
-// >= 1024
-@media (min-width: em(1024)) {
+// >= 992
+@media (min-width: em(992)) {
 
     // all
     @for $i from 0 through 10 {
