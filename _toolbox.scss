@@ -8,76 +8,77 @@
 // Paddings.
 /*----------------------------------------------------*/
 
+// calculate rems
 $browser-context: 16; // Default
 
-@function em($pixels, $context: $browser-context) {
-    @return #{$pixels/$context}em;
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
 }
 
 // all
 @for $i from 0 through 10 {
     .t-p-#{$i * 10} {
-        padding: em($i * 10);
+        padding: rem($i * 10);
     }
 }
 
 // top bottom
 @for $i from 0 through 10 {
     .t-ptb-#{$i * 10} {
-        padding: em($i * 10) 0;
+        padding: rem($i * 10) 0;
     }
 }
 
 // >= 768
-@media (min-width: em(768)) {
+@media (min-width: rem(768)) {
 
     // all
     @for $i from 0 through 10 {
         .t-p-sm-#{$i * 10} {
-            padding: em($i * 10);
+            padding: rem($i * 10);
         }
     }
 
     // top bottom
     @for $i from 0 through 10 {
         .t-ptb-sm-#{$i * 10} {
-            padding: em($i * 10) 0;
+            padding: rem($i * 10) 0;
         }
     }
 }
 
 // >= 992
-@media (min-width: em(992)) {
+@media (min-width: rem(992)) {
 
     // all
     @for $i from 0 through 10 {
         .t-p-md-#{$i * 10} {
-            padding: em($i * 10);
+            padding: rem($i * 10);
         }
     }
 
     // top bottom
     @for $i from 0 through 10 {
         .t-ptb-md-#{$i * 10} {
-            padding: em($i * 10) 0;
+            padding: rem($i * 10) 0;
         }
     }
 }
 
 // >= 1200
-@media (min-width: em(1200)) {
+@media (min-width: rem(1200)) {
 
     // all
     @for $i from 0 through 10 {
         .t-p-lg-#{$i * 10} {
-            padding: em($i * 10);
+            padding: rem($i * 10);
         }
     }
 
     // top bottom
     @for $i from 0 through 10 {
         .t-ptb-lg-#{$i * 10} {
-            padding: em($i * 10) 0;
+            padding: rem($i * 10) 0;
         }
     }
 }
@@ -89,39 +90,39 @@ $browser-context: 16; // Default
 // bottom
 @for $i from 0 through 20 {
     .t-mb-#{$i * 10} {
-        margin-bottom: em($i * 10);
+        margin-bottom: rem($i * 10);
     }
 }
 
 // >= 768
-@media (min-width: em(768)) {
+@media (min-width: rem(768)) {
 
     // bottom
     @for $i from 0 through 10 {
         .t-mb-sm-#{$i * 10} {
-            margin-bottom: em($i * 10);
+            margin-bottom: rem($i * 10);
         }
     }
 }
 
 // >= 992
-@media (min-width: em(992)) {
+@media (min-width: rem(992)) {
 
     // bottom
     @for $i from 0 through 10 {
         .t-mb-md-#{$i * 10} {
-            margin-bottom: em($i * 10);
+            margin-bottom: rem($i * 10);
         }
     }
 }
 
 // >= 1200
-@media (min-width: em(1200)) {
+@media (min-width: rem(1200)) {
 
     // bottom
     @for $i from 0 through 10 {
         .t-mb-lg-#{$i * 10} {
-            margin-bottom: em($i * 10);
+            margin-bottom: rem($i * 10);
         }
     }
 }
